@@ -183,14 +183,15 @@ function exportArtboards(artboards, outputName) {
     if (defaults.exportToImages) {
       // Create a temporary image of the artboard
       var random = NSUUID.UUID().UUIDString()
-      var imagePath = NSTemporaryDirectory() + artboard.objectID() + ' ' + random + '.png'
+      var imagePath = NSTemporaryDirectory() + artboard.objectID() + ' ' + random + '.jpg'
 
       // Create a new temporary export option
       artboard.exportOptions().addExportFormat()
       var newExportFormat = artboard.exportOptions().exportFormats().lastObject()
       newExportFormat.scale = exportScale(artboard.frame())
       newExportFormat.name = ''
-      newExportFormat.format = 'png'
+      newExportFormat.format = 'jpg'
+      newExportFormat.compression = 0.8
 
       var rect = artboard.absoluteRect().rect()
       var slice = MSExportRequest.exportRequestFromExportFormat_layer_inRect_useIDForName(newExportFormat, artboard, rect, false)

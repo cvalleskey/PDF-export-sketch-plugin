@@ -130,7 +130,8 @@ function showOptionsWindow(exportOption, name, callback) {
 	exportAsImage.setState(defaults.exportToImages)
 	exportAsImage.setButtonType(NSSwitchButton)
   exportAsImage.setBezelStyle(0)
-	exportAsImage.setTitle("Export as PNGs into PDF")
+	//exportAsImage.setTitle("Export as PNGs into PDF")
+  exportAsImage.setTitle("Flatten before export (JPG)")
   container.addSubview(exportAsImage)
 
   y -= 28
@@ -139,7 +140,7 @@ function showOptionsWindow(exportOption, name, callback) {
   pngSizeLabel.setDrawsBackground(false)
   pngSizeLabel.setEditable(false)
   pngSizeLabel.setSelectable(false)
-  pngSizeLabel.setStringValue("PNG export size")
+  pngSizeLabel.setStringValue("Export size")
   pngSizeLabel.setFont(NSFont.systemFontOfSize(10))
   container.addSubview(pngSizeLabel)
 

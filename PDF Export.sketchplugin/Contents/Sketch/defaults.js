@@ -2,11 +2,13 @@
 var defaultsKey = "com.davidwilliames.pdf-export"
 
 var defaults = {
-  exportToImages: false,
+  exportToImages: true,
   excludeWithPrefix: true,
   exclusionPrefix: '-',
   imageExportScale: 2,
-  includeSymbolArtboards: false
+  includeSymbolArtboards: false,
+  exportFormat: 'jpg',
+  exportQuality: 80
 }
 
 var exportOptions = {
